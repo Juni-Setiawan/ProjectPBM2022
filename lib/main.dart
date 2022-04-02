@@ -50,7 +50,6 @@ class Pendahuluan extends StatelessWidget {
                       primary: Color.fromARGB(255, 171, 249, 202)),
                   child: const Text(
                     "Mulai",
-                    style: TextStyle(fontSize: 30, fontFamily: "Montserrat"),
                   )),
             ),
           ],
