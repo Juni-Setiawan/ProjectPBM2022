@@ -135,7 +135,7 @@ class InitState extends State<SignUpScreen> {
                     Icons.phone,
                     color: Color.fromARGB(255, 2, 2, 2),
                   ),
-                  hintText: "Nomor Telepon",
+                  hintText: "Nomor Telpon",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -193,7 +193,7 @@ class InitState extends State<SignUpScreen> {
                     Icons.vpn_key,
                     color: Color.fromARGB(255, 3, 3, 3),
                   ),
-                  hintText: "Konfirmasi Password",
+                  hintText: "Confirm Password",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -240,7 +240,7 @@ class InitState extends State<SignUpScreen> {
                   Text("Sudah Mempunyai Akun?  "),
                   GestureDetector(
                     child: Text(
-                      "Masuk Sekarang",
+                      "Login",
                       style: TextStyle(color: Colors.lightGreen),
                     ),
                     onTap: () {
