@@ -14,7 +14,7 @@ class InitState extends State<SignUpScreen> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("SIGN UP"),
+          title: const Text("SIGN UP or REGISTER"),
           backgroundColor: Color.fromARGB(255, 97, 203, 115),
         ),
         body: SingleChildScrollView(
