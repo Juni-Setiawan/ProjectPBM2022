@@ -240,7 +240,7 @@ class InitState extends State<SignUpScreen> {
                   Text("Sudah Mempunyai Akun?  "),
                   GestureDetector(
                     child: Text(
-                      "Login",
+                      "Login Now",
                       style: TextStyle(color: Colors.lightGreen),
                     ),
                     onTap: () {
