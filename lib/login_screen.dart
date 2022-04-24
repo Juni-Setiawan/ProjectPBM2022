@@ -25,9 +25,6 @@ class StartState extends State<LoginScreen> {
           children: [
             Container(
               decoration: BoxDecoration(
-                borderRadius:
-                    BorderRadius.only(bottomLeft: Radius.circular(90)),
-                color: Color.fromARGB(255, 238, 239, 237),
                 gradient: LinearGradient(
                   colors: [
                     (Color.fromARGB(255, 255, 255, 255)),
@@ -43,11 +40,10 @@ class StartState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 50),
                     child: Image.asset(
                       "assets/images/caspercar.png",
-                      height: 50,
-                      width: 50,
+                      height: 200,
+                      width: 200,
                     ),
                   ),
                   Container(
@@ -115,16 +111,6 @@ class StartState extends State<LoginScreen> {
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-              alignment: Alignment.centerRight,
-              child: GestureDetector(
-                onTap: () {
-                  // Write Click Listener Code Here
-                },
-                child: Text("Lupa Password? "),
               ),
             ),
             GestureDetector(
