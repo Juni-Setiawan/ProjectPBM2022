@@ -7,6 +7,8 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class InitState extends State<SignUpScreen> {
+  var SignUpScreen1;
+
   @override
   Widget build(BuildContext context) => initWidget();
 
@@ -14,43 +16,24 @@ class InitState extends State<SignUpScreen> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("SIGN UP or REGISTER"),
+          title: const Text("SIGN UP"),
           backgroundColor: Color.fromARGB(255, 97, 203, 115),
         ),
         body: SingleChildScrollView(
             child: Column(
           children: [
             Container(
-              height: 198,
-              decoration: BoxDecoration(
-                borderRadius:
-                    BorderRadius.only(bottomLeft: Radius.circular(90)),
-                color: Color.fromARGB(255, 245, 243, 242),
-                gradient: LinearGradient(
-                  colors: [(Colors.white), Colors.white],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
+              height: 75,
               child: Center(
                   child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 100),
-                    child: Image.asset(
-                      "assets/images/caspercar.png",
-                      height: 50,
-                      width: 80,
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(right: 5, top: 5),
-                    alignment: Alignment.bottomRight,
+                    alignment: Alignment.center,
                     child: Text(
-                      "",
-                      style: TextStyle(fontSize: 20, color: Colors.lightGreen),
+                      "Selamat Datang di CasperCar!!!",
+                      style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                   )
                 ],
@@ -75,10 +58,10 @@ class InitState extends State<SignUpScreen> {
                 cursorColor: Color.fromARGB(255, 20, 20, 20),
                 decoration: InputDecoration(
                   icon: Icon(
-                    Icons.person,
+                    Icons.account_circle,
                     color: Color.fromARGB(255, 20, 20, 19),
                   ),
-                  hintText: "Nama Lengkap",
+                  hintText: "Email atau Username",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -103,10 +86,10 @@ class InitState extends State<SignUpScreen> {
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   icon: Icon(
-                    Icons.email,
+                    Icons.lock_outline,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
-                  hintText: "Email",
+                  hintText: "Password",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -132,68 +115,140 @@ class InitState extends State<SignUpScreen> {
                 decoration: InputDecoration(
                   focusColor: Colors.lightGreen,
                   icon: Icon(
-                    Icons.phone,
+                    Icons.lock_outline,
                     color: Color.fromARGB(255, 2, 2, 2),
                   ),
-                  hintText: "Nomor Telpon",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                ),
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
-              padding: EdgeInsets.only(left: 20, right: 20),
-              height: 54,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Color(0xffEEEEEE),
-                boxShadow: [
-                  BoxShadow(
-                      offset: Offset(0, 20),
-                      blurRadius: 100,
-                      color: Color(0xffEEEEEE)),
-                ],
-              ),
-              child: TextField(
-                cursorColor: Colors.lightGreen,
-                decoration: InputDecoration(
-                  focusColor: Colors.lightGreen,
-                  icon: Icon(
-                    Icons.vpn_key,
-                    color: Color.fromARGB(255, 6, 6, 6),
-                  ),
-                  hintText: "Masukkan Password",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                ),
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
-              padding: EdgeInsets.only(left: 20, right: 20),
-              height: 54,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Color(0xffEEEEEE),
-                boxShadow: [
-                  BoxShadow(
-                      offset: Offset(0, 20),
-                      blurRadius: 100,
-                      color: Color(0xffEEEEEE)),
-                ],
-              ),
-              child: TextField(
-                cursorColor: Colors.lightGreen,
-                decoration: InputDecoration(
-                  focusColor: Colors.lightGreen,
-                  icon: Icon(
-                    Icons.vpn_key,
-                    color: Color.fromARGB(255, 3, 3, 3),
-                  ),
                   hintText: "Confirm Password",
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20),
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xffEEEEEE),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 20),
+                      blurRadius: 100,
+                      color: Color(0xffEEEEEE)),
+                ],
+              ),
+              child: TextField(
+                cursorColor: Colors.lightGreen,
+                // ignore: prefer_const_constructors
+                decoration: InputDecoration(
+                  focusColor: Colors.lightGreen,
+                  hintText: "Nama Pengguna",
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20),
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xffEEEEEE),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 20),
+                      blurRadius: 100,
+                      color: Color(0xffEEEEEE)),
+                ],
+              ),
+              child: TextField(
+                cursorColor: Colors.lightGreen,
+                // ignore: prefer_const_constructors
+                decoration: InputDecoration(
+                  focusColor: Colors.lightGreen,
+                  hintText: "Tanggal Lahir",
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20),
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xffEEEEEE),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 20),
+                      blurRadius: 100,
+                      color: Color(0xffEEEEEE)),
+                ],
+              ),
+              child: TextField(
+                cursorColor: Colors.lightGreen,
+                // ignore: prefer_const_constructors
+                decoration: InputDecoration(
+                  focusColor: Colors.lightGreen,
+                  hintText: "No. Handphone",
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20),
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xffEEEEEE),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 20),
+                      blurRadius: 100,
+                      color: Color(0xffEEEEEE)),
+                ],
+              ),
+              child: TextField(
+                cursorColor: Colors.lightGreen,
+                // ignore: prefer_const_constructors
+                decoration: InputDecoration(
+                  focusColor: Colors.lightGreen,
+                  hintText: "Alamat Lengkap",
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20),
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xffEEEEEE),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 20),
+                      blurRadius: 100,
+                      color: Color(0xffEEEEEE)),
+                ],
+              ),
+              child: TextField(
+                cursorColor: Colors.lightGreen,
+                // ignore: prefer_const_constructors
+                decoration: InputDecoration(
+                  focusColor: Colors.lightGreen,
+                  hintText: "No. KTP",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -202,16 +257,18 @@ class InitState extends State<SignUpScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
+                    // ignore: dead_code
                     MaterialPageRoute(builder: (BuildContext ctx) {
-                  return LoginScreen();
+                  return SignUpScreen();
                 }));
                 // Write Click Listener Code Here.
               },
               child: Container(
                 alignment: Alignment.center,
-                margin: EdgeInsets.only(left: 20, right: 20, top: 70),
-                padding: EdgeInsets.only(left: 20, right: 20),
-                height: 54,
+                margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+                padding: EdgeInsets.only(left: 10, right: 10),
+                height: 30,
+                width: 95,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                     (Color.fromARGB(255, 97, 203, 115)),
@@ -237,10 +294,10 @@ class InitState extends State<SignUpScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Sudah Mempunyai Akun?  "),
+                  Text("Sudah Punya Akun?  "),
                   GestureDetector(
                     child: Text(
-                      "Login Now",
+                      "Login",
                       style: TextStyle(color: Colors.lightGreen),
                     ),
                     onTap: () {
