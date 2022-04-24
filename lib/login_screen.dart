@@ -24,7 +24,6 @@ class StartState extends State<LoginScreen> {
             child: Column(
           children: [
             Container(
-              height: 155,
               decoration: BoxDecoration(
                 borderRadius:
                     BorderRadius.only(bottomLeft: Radius.circular(90)),
@@ -66,7 +65,6 @@ class StartState extends State<LoginScreen> {
               alignment: Alignment.center,
               margin: EdgeInsets.only(left: 20, right: 20, top: 70),
               padding: EdgeInsets.only(left: 20, right: 20),
-              height: 54,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Colors.grey[200],
@@ -81,10 +79,10 @@ class StartState extends State<LoginScreen> {
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   icon: Icon(
-                    Icons.email,
+                    Icons.account_circle,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
-                  hintText: "Masukkan Email",
+                  hintText: "Email atau Username",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -110,10 +108,10 @@ class StartState extends State<LoginScreen> {
                 decoration: InputDecoration(
                   focusColor: Colors.lightGreen,
                   icon: Icon(
-                    Icons.vpn_key,
+                    Icons.lock_outline,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
-                  hintText: "Masukkan Password",
+                  hintText: "Password",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
