@@ -47,7 +47,7 @@ class Pendahuluan extends StatelessWidget {
                       minimumSize: const Size(200, 50),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
-                      primary: Color.fromARGB(255, 171, 249, 202)),
+                      primary: Color.fromARGB(255, 99, 194, 94)),
                   child: const Text(
                     "Mulai",
                   )),

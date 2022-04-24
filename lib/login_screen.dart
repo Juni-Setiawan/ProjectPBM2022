@@ -126,14 +126,14 @@ class StartState extends State<LoginScreen> {
                 alignment: Alignment.center,
                 margin: EdgeInsets.only(left: 10, right: 10, top: 10),
                 padding: EdgeInsets.only(left: 10, right: 10),
-                height: 30,
-                width: 95,
+                height: 35,
+                width: 100,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                     (Color.fromARGB(255, 97, 203, 115)),
                     Color.fromARGB(255, 97, 203, 115)
                   ], begin: Alignment.centerLeft, end: Alignment.centerRight),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(50),
                   color: Colors.grey[200],
                   boxShadow: [
                     BoxShadow(

@@ -287,8 +287,8 @@ class InitState extends State<SignUpScreen> {
                 alignment: Alignment.center,
                 margin: EdgeInsets.only(left: 10, right: 10, top: 10),
                 padding: EdgeInsets.only(left: 10, right: 10),
-                height: 30,
-                width: 95,
+                height: 50,
+                width: 150,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                     (Color.fromARGB(255, 97, 203, 115)),
