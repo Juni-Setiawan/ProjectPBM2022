@@ -143,6 +143,10 @@ class InitState extends State<SignUpScreen> {
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.account_box,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
                   focusColor: Colors.lightGreen,
                   hintText: "Nama Pengguna",
                   enabledBorder: InputBorder.none,
@@ -169,8 +173,12 @@ class InitState extends State<SignUpScreen> {
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.calendar_month_rounded,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
                   focusColor: Colors.lightGreen,
-                  hintText: "Tanggal Lahir",
+                  hintText: "Tanggal Lahir (DD/MM/YYYY)",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -195,6 +203,10 @@ class InitState extends State<SignUpScreen> {
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.phone_android,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
                   focusColor: Colors.lightGreen,
                   hintText: "No. Handphone",
                   enabledBorder: InputBorder.none,
@@ -221,6 +233,10 @@ class InitState extends State<SignUpScreen> {
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.location_history,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
                   focusColor: Colors.lightGreen,
                   hintText: "Alamat Lengkap",
                   enabledBorder: InputBorder.none,
@@ -247,6 +263,10 @@ class InitState extends State<SignUpScreen> {
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.credit_card_outlined,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
                   focusColor: Colors.lightGreen,
                   hintText: "No. KTP",
                   enabledBorder: InputBorder.none,
