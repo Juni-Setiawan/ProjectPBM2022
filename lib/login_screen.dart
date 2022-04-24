@@ -124,7 +124,7 @@ class StartState extends State<LoginScreen> {
                 onTap: () {
                   // Write Click Listener Code Here
                 },
-                child: Text("Lupa Password?"),
+                child: Text("Lupa Password? "),
               ),
             ),
             GestureDetector(
