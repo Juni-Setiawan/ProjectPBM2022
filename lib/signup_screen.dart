@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/history.dart';
 import 'package:flutter_application_1/login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -279,7 +280,7 @@ class InitState extends State<SignUpScreen> {
                 Navigator.push(context,
                     // ignore: dead_code
                     MaterialPageRoute(builder: (BuildContext ctx) {
-                  return SignUpScreen();
+                  return HistoryPage();
                 }));
                 // Write Click Listener Code Here.
               },
