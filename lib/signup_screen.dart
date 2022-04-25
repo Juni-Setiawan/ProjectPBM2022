@@ -148,7 +148,7 @@ class InitState extends State<SignUpScreen> {
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
                   focusColor: Colors.lightGreen,
-                  hintText: "Nama Pengguna",
+                  hintText: "Nama Lengkap",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
