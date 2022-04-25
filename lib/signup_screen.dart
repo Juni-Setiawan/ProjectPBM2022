@@ -102,7 +102,7 @@ class InitState extends State<SignUpScreen> {
               height: 54,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: Color(0xffEEEEEE),
+                color: Color.fromARGB(255, 255, 255, 255),
                 boxShadow: [
                   BoxShadow(
                       offset: Offset(0, 20),
@@ -322,7 +322,10 @@ class InitState extends State<SignUpScreen> {
                     ),
                     onTap: () {
                       // Write Tap Code Here.
-                      Navigator.pop(context);
+                      Navigator.pop(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
                     },
                   )
                 ],
