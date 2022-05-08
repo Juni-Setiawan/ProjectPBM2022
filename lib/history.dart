@@ -281,7 +281,7 @@ class _SecondHistoryPageState extends State<SecondHistoryPage> {
                       contentPadding: EdgeInsets.all(10),
                       leading: Image(
                         image: AssetImage(
-                          'assets/toyota.png',
+                          'assets/images/toyota.png',
                         ),
                       ),
                       title: Text(
@@ -315,7 +315,7 @@ class _SecondHistoryPageState extends State<SecondHistoryPage> {
                       contentPadding: EdgeInsets.all(10),
                       leading: Image(
                         image: AssetImage(
-                          'assets/mercedes.png',
+                          'assets/images/mercedes.png',
                         ),
                       ),
                       title: Text(
