@@ -64,6 +64,11 @@ flutter:
     - assets/images/honda.png
     - assets/images/mercedes.png
     - assets/images/toyota.png
+    - assets/images/zainul.jpeg
+    - assets/images/abdullah.jpg
+    - assets/images/elsa.jpeg
+    - assets/images/abdullah.jpeg
+    - assets/images/setiawan.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
