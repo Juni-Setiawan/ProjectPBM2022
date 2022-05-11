@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/chatPage.dart';
 import 'package:flutter_application_1/login_screen.dart';
+import 'package:flutter_application_1/profile.dart';
 import 'package:flutter_application_1/user_profile.dart';
 
 void main() => runApp(new MyApp());
