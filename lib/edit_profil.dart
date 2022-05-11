@@ -87,31 +87,6 @@ class EditProfile extends StatelessWidget {
               CostumButton2(
                   nama: 'Nama', ket: 'Setiawan', onPressed: () {}, width: 150),
               const SizedBox(height: 20),
-              SizedBox(
-                width: 300,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      foregroundColor: MaterialStateProperty.all(Colors.black),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Username',
-                      ),
-                      SizedBox(width: 80),
-                      Text(
-                        'Setiawan-Yudi',
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
               CostumButton2(
                   nama: 'No. KTP',
                   ket: '3525183294324738',
