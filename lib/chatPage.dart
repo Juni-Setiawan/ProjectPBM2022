@@ -31,6 +31,12 @@ class _ChatPageState extends State<ChatPage> {
         messageText: "Baik, besok saya konfirmasi lagi yaa...",
         imageURL: "assets/images/abdullah.jpeg",
         time: "28 Mar"),
+    ChatUsers(
+        name: "Ziana", messageText: "Saya Besok kesana mas", time: "20 Mar"),
+    ChatUsers(
+        name: "Fadil Alkautsar",
+        messageText: "Ada yang bisa saya bantu?.....",
+        time: "15 Mar"),
   ];
   @override
   Widget build(BuildContext context) {
