@@ -1,8 +1,10 @@
 import 'dart:io';
+import 'package:CasperCar/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/daftar_mobil.dart';
-import 'package:flutter_application_1/history.dart';
-import 'package:flutter_application_1/home.dart';
+import 'package:CasperCar/cart.dart';
+import 'package:CasperCar/daftar_mobil.dart';
+import 'package:CasperCar/history.dart';
+import 'package:CasperCar/home.dart';
 import 'signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -120,7 +122,7 @@ class StartState extends State<LoginScreen> {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (BuildContext ctx) {
-                  return HomePage();
+                  return Navbar();
                   // Write Click Listener Code Here
                 }));
                 // Write Click Listener Code Here.

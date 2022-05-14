@@ -1,7 +1,9 @@
+import 'package:CasperCar/home.dart';
+import 'package:CasperCar/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/chatPage.dart';
-import 'package:flutter_application_1/login_screen.dart';
-import 'package:flutter_application_1/profile.dart';
+import 'package:CasperCar/chatPage.dart';
+import 'package:CasperCar/login_screen.dart';
+import 'package:CasperCar/profile.dart';
 
 void main() => runApp(new MyApp());
 

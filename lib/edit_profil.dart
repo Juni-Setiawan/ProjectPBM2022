@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget/costum_button_profile.dart';
-import 'package:flutter_application_1/widget/custom_button_edit.dart';
+import 'package:CasperCar/widget/costum_button_profile.dart';
+import 'package:CasperCar/widget/custom_button_edit.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -111,45 +111,6 @@ class EditProfile extends StatelessWidget {
                   onPressed: () {},
                   width: 50),
               const SizedBox(height: 20),
-            ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.black,
-                ),
-                label: "",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.black,
-                ),
-                label: "",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.pin_drop,
-                  color: Colors.black,
-                ),
-                label: "",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.history,
-                  color: Colors.black,
-                ),
-                label: "",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person,
-                  color: Colors.blue,
-                ),
-                label: "",
-              ),
             ],
           ),
         ));
