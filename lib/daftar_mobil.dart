@@ -36,11 +36,11 @@ class __StartdaftarMobilState extends State<StartdaftarMobil> {
         appBar: AppBar(
           title: Center(
             child: Text(
-              "DAFTAR MOBIL",
+              "Daftar Mobil",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
-                  fontSize: 30),
+                  fontSize: 24),
             ),
           ),
           backgroundColor: Color.fromARGB(255, 97, 203, 115),
