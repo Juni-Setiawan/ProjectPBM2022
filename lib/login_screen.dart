@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/history.dart';
+import 'package:flutter_application_1/home.dart';
 import 'signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -118,7 +119,7 @@ class StartState extends State<LoginScreen> {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (BuildContext ctx) {
-                  return HistoryPage();
+                  return HomePage();
                   // Write Click Listener Code Here
                 }));
                 // Write Click Listener Code Here.
