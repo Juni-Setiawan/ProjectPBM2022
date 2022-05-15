@@ -1,3 +1,4 @@
+import 'package:CasperCar/isi_nota.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/home.dart';
 
@@ -67,6 +68,29 @@ class __StartdaftarMobilState extends State<StartdaftarMobil> {
                   "assets/images/toyota.png",
                 ),
               ),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              padding: const EdgeInsets.only(top: 200),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return IsiNota();
+                        },
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(200, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      primary: Color.fromARGB(255, 99, 194, 94)),
+                  child: const Text(
+                    "Sewa",
+                  )),
             ),
           ],
         )),
