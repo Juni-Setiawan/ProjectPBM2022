@@ -122,7 +122,7 @@ class _StartHistoryState extends State<StartHistory> {
                       fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
-                  "Mercedes Benz CL Class\n 3 hari\nRp. 150.000",
+                  "Mercedes Benz CL Class\n 3 hari\nRp. 450.000",
                   textAlign: TextAlign.right,
                   style: const TextStyle(fontSize: 18),
                 ),
@@ -209,7 +209,7 @@ class _SecondHistoryPageState extends State<SecondHistoryPage> {
             },
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.blue,
+              color: Colors.black,
             )),
         actions: [
           IconButton(
