@@ -1,3 +1,4 @@
+import 'package:CasperCar/home.dart';
 import 'package:flutter/material.dart';
 
 class maps extends StatefulWidget {
@@ -10,17 +11,30 @@ class maps extends StatefulWidget {
 class _mapsState extends State<maps> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-      child: Container(
-          color: Colors.white,
-          child: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[
-                  Text('Maps'),
-                ]),
-          )),
+    return MaterialApp(
+        home: Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            "Rental Mobil Terdekat",
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.w600, fontSize: 24),
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 97, 203, 115),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ));
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            )),
+      ),
     ));
   }
 }
