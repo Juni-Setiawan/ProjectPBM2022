@@ -26,7 +26,7 @@ class EditProfile extends StatelessWidget {
                             Navigator.pop(context);
                           },
                           icon: const Icon(Icons.arrow_back_outlined),
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
                       const SizedBox(width: 80),
