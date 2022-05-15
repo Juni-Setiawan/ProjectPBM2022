@@ -41,7 +41,7 @@ class _IsiNotaState extends State<IsiNota> {
           textAlign: TextAlign.center,
         ),
         leading: Icon(
-          Icons.arrow_left,
+          Icons.arrow_back,
           color: Colors.black,
         ),
       ),
