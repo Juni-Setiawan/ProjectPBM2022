@@ -38,6 +38,11 @@ class _ChatPageState extends State<ChatPage> {
         name: "Fadil Alkautsar",
         messageText: "Ada yang bisa saya bantu?.....",
         time: "15 Mar"),
+    ChatUsers(
+        name: "Layyinah",
+        messageText:
+            "Selamat Datang di CasperCar. Disini melayani rental mobil yang terpercata se Wilayah Lumajang.....",
+        time: "13 Mar"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -54,7 +59,17 @@ class _ChatPageState extends State<ChatPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.arrow_back_ios)),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return HomePage();
+                              },
+                            ),
+                          );
+                        },
+                        icon: Icon(Icons.arrow_back)),
                     Text(
                       "Chat",
                       style:
