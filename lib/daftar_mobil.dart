@@ -1,3 +1,4 @@
+import 'package:CasperCar/dataCustomer.dart';
 import 'package:CasperCar/isi_nota.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/home.dart';
@@ -78,7 +79,7 @@ class __StartdaftarMobilState extends State<StartdaftarMobil> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return IsiNota();
+                          return dataCustomer();
                         },
                       ),
                     );
