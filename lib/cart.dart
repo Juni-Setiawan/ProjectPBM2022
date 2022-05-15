@@ -1,5 +1,7 @@
 import 'package:CasperCar/dataCustomer.dart';
 import 'package:CasperCar/home.dart';
+import 'package:CasperCar/isi_nota.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/navbar.dart';
 
@@ -36,6 +38,40 @@ class _cartState extends State<cart> {
               Icons.arrow_back,
               color: Colors.black,
             )),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+                alignment: Alignment.topRight,
+                child: Icon(
+                  CupertinoIcons.pencil,
+                )),
+            Container(
+              alignment: Alignment.bottomCenter,
+              padding: const EdgeInsets.only(top: 200),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return IsiNota();
+                        },
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(200, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      primary: Color.fromARGB(255, 99, 194, 94)),
+                  child: const Text(
+                    "CheckOut",
+                  )),
+            ),
+          ],
+        ),
       ),
     ));
   }

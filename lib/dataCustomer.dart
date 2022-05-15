@@ -212,7 +212,7 @@ class _StartdataCustomerState extends State<StartdataCustomer> {
                 ),
                 child: Text(
                   "Next",
-                  style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
                 ),
               ),
             ),
