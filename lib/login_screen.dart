@@ -55,8 +55,9 @@ class StartState extends State<LoginScreen> {
                     margin: EdgeInsets.only(right: 20, top: 20),
                     alignment: Alignment.bottomRight,
                     child: Text(
-                      "Masuk",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      "",
+                      style: TextStyle(
+                          fontSize: 20, color: Color.fromARGB(255, 26, 25, 25)),
                     ),
                   )
                 ],
@@ -149,7 +150,7 @@ class StartState extends State<LoginScreen> {
                 ),
                 child: Text(
                   "LOGIN",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
                 ),
               ),
             ),
