@@ -1,3 +1,4 @@
+import 'package:CasperCar/dataCustomer.dart';
 import 'package:CasperCar/home.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/navbar.dart';
@@ -28,7 +29,7 @@ class _cartState extends State<cart> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomePage(),
+                    builder: (context) => const dataCustomer(),
                   ));
             },
             icon: Icon(
