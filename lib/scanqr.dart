@@ -12,19 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: ScanQR(),
     );
   }
 }
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+class ScanQR extends StatefulWidget {
+  const ScanQR({Key? key}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<ScanQR> createState() => _ScanQRState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _ScanQRState extends State<ScanQR> {
   String text = 'hasil scan';
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
           leading: IconButton(
               onPressed: () {},
               icon: Icon(
-                Icons.arrow_left_sharp,
+                Icons.arrow_back,
                 color: Colors.black,
               ))),
       body: Center(

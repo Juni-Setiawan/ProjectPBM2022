@@ -56,7 +56,7 @@ class _StartHistoryState extends State<StartHistory> {
                         builder: (context) => const SecondHistoryPage()));
               },
               icon: Icon(
-                Icons.arrow_right,
+                Icons.arrow_forward,
                 color: Colors.black,
               ))
         ],

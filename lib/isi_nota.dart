@@ -225,7 +225,7 @@ class _IsiNotaState extends State<IsiNota> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const MainPage(),
+                      builder: (context) => const ScanQR(),
                     ));
               },
               child: Text('Selanjutnya'),
