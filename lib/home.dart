@@ -1,3 +1,4 @@
+import 'package:CasperCar/chatPage.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/daftar_mobil.dart';
 import 'package:CasperCar/navbar.dart';
@@ -44,12 +45,15 @@ class _StartHomePageState extends State<StartHomePage> {
               'Casper Car',
               style: TextStyle(color: Colors.black),
             ),
-            actions: const [
-              Icon(
-                Icons.chat,
+            actions: <Widget> [
+              IconButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
+                }, 
+              icon: Icon(Icons.chat,
                 color: Colors.black,
-                size: 24,
-              ),
+                size: 24,)
+                ),
             ],
           ),
           body: SafeArea(
