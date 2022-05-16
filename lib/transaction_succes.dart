@@ -1,3 +1,5 @@
+import 'package:CasperCar/home.dart';
+import 'package:CasperCar/scanqr.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -11,33 +13,85 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: _title,
-      home: MyStatefulWidget(),
+      home: transacsionsuccess(),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+class transacsionsuccess extends StatefulWidget {
+  const transacsionsuccess({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<transacsionsuccess> createState() => _transacsionsuccessState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _transacsionsuccessState extends State<transacsionsuccess> {
   int _count = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample Code'),
-      ),
-      body: Center(child: Text('')),
-      backgroundColor: Color.fromARGB(255, 241, 241, 130),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => _count++),
-        tooltip: 'Increment Counter',
-        child: Image.asset('name'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Center(
+            child: Text(
+              "Transaksi Berhasil",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 24),
+            ),
+          ),
+          backgroundColor: Color.fromARGB(255, 97, 203, 115),
+          leading: IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ScanQR(),
+                    ));
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              )),
+        ),
+        body: SingleChildScrollView(
+            child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              child: Image(
+                image: AssetImage(
+                  "assets/images/berhasil.png",
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              padding: const EdgeInsets.only(top: 200),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomePage();
+                        },
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(200, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      primary: Color.fromARGB(255, 99, 194, 94)),
+                  child: const Text(
+                    "Kembali Ke Beranda",
+                  )),
+            ),
+          ],
+        )),
       ),
     );
   }
