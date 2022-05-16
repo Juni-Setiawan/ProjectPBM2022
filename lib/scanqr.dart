@@ -1,3 +1,5 @@
+import 'package:CasperCar/transaction_failed.dart';
+import 'package:CasperCar/transaction_succes.dart';
 import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
@@ -115,7 +117,13 @@ class _ScanQRState extends State<ScanQR> {
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => transacsionsuccess(),
+                              ));
+                        },
                         child: Text(
                           "Selesai",
                           style: TextStyle(color: Colors.black),
