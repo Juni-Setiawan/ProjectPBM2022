@@ -100,7 +100,13 @@ class _ScanQRState extends State<ScanQR> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => transacsionfailed(),
+                              ));
+                        },
                         child: Text(
                           "Batal",
                           style: TextStyle(color: Colors.black),
@@ -125,7 +131,7 @@ class _ScanQRState extends State<ScanQR> {
                               ));
                         },
                         child: Text(
-                          "Selesai",
+                          "selesai",
                           style: TextStyle(color: Colors.black),
                         ),
                         style: ButtonStyle(
