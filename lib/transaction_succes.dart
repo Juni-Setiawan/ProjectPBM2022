@@ -69,7 +69,7 @@ class _transacsionsuccessState extends State<transacsionsuccess> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: const EdgeInsets.only(top: 200),
+              padding: const EdgeInsets.only(top: 100),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -82,7 +82,7 @@ class _transacsionsuccessState extends State<transacsionsuccess> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(200, 50),
+                      minimumSize: const Size(100, 50),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
                       primary: Color.fromARGB(255, 99, 194, 94)),
