@@ -69,7 +69,7 @@ class _transacsionfailedState extends State<transacsionfailed> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              padding: const EdgeInsets.only(top: 200),
+              padding: const EdgeInsets.only(top: 200), 
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
