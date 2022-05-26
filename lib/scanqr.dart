@@ -1,3 +1,4 @@
+import 'package:CasperCar/isi_nota.dart';
 import 'package:CasperCar/transaction_failed.dart';
 import 'package:CasperCar/transaction_succes.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,14 @@ class _ScanQRState extends State<ScanQR> {
           centerTitle: true,
           backgroundColor: Color(0xFF24C735),
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => IsiNota(),
+                  ),
+                );
+              },
               icon: Icon(
                 Icons.arrow_back,
                 color: Colors.black,
@@ -59,7 +67,7 @@ class _ScanQRState extends State<ScanQR> {
             ),
             Icon(
               Icons.qr_code,
-              size: 300,
+              size: 250,
             ),
             Text(text),
             const SizedBox(
