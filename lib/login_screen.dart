@@ -106,6 +106,7 @@ class StartState extends State<LoginScreen> {
                 ],
               ),
               child: TextField(
+                obscureText: true,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   focusColor: Colors.lightGreen,

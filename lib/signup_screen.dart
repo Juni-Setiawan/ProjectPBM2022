@@ -86,6 +86,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                obscureText: true,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   icon: Icon(
@@ -114,6 +115,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                obscureText: true,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   focusColor: Colors.lightGreen,

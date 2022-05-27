@@ -71,6 +71,14 @@ class __StartdaftarMobilState extends State<StartdaftarMobil> {
               ),
             ),
             Container(
+              alignment: Alignment.bottomLeft,
+              child: Text("Toyota Avanza 1.3 E MT"),
+            ),
+            Container(
+              alignment: Alignment.bottomLeft,
+              child: Text("P 3821 AA"),
+            ),
+            Container(
               alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.only(top: 200),
               child: ElevatedButton(
