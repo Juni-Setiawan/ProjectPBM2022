@@ -2,7 +2,7 @@ import 'package:CasperCar/isi_nota.dart';
 import 'package:CasperCar/transaction_failed.dart';
 import 'package:CasperCar/transaction_succes.dart';
 import 'package:flutter/material.dart';
-import 'package:qrscan/qrscan.dart' as scanner;
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -87,8 +87,12 @@ class _ScanQRState extends State<ScanQR> {
                     ),
                   ),
                   onPressed: () async {
-                    text = (await scanner.scan())!;
-                    setState(() {});
+                    String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode('#ff6666', 'Cancel', true, ScanMode.QR);
+                    if (!mounted) return;
+
+                    setState(() {
+                      text = barcodeScanRes;
+                    });
                   },
                   style: ButtonStyle(
                       backgroundColor:
