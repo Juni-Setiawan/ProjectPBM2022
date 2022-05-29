@@ -12,6 +12,16 @@ class SignUpScreen extends StatefulWidget {
 class InitState extends State<SignUpScreen> {
   var SignUpScreen1;
 
+  late bool secure;
+  late bool secureC;
+
+  @override
+  void initState() {
+    secure = false;
+    secureC = false;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) => initWidget();
 
@@ -86,7 +96,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
-                obscureText: true,
+                obscureText: secure,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   icon: Icon(
@@ -96,6 +106,14 @@ class InitState extends State<SignUpScreen> {
                   hintText: "Password",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
+                  suffixIcon: IconButton(
+                    icon: Icon(secure ? Icons.visibility_off : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        secure = !secure;
+                      });
+                    },
+                  )
                 ),
               ),
             ),
@@ -115,7 +133,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
-                obscureText: true,
+                obscureText: secureC,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   focusColor: Colors.lightGreen,
@@ -126,6 +144,14 @@ class InitState extends State<SignUpScreen> {
                   hintText: "Confirm Password",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
+                  suffixIcon: IconButton(
+                    icon: Icon(secureC ? Icons.visibility_off : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        secureC = !secureC;
+                      });
+                    },
+                  )
                 ),
               ),
             ),
