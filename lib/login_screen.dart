@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:CasperCar/navbar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/cart.dart';
 import 'package:CasperCar/daftar_mobil.dart';
@@ -117,33 +119,37 @@ class StartState extends State<LoginScreen> {
                 obscureText: secure,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
-                  focusColor: Colors.lightGreen,
-                  icon: Icon(
-                    Icons.lock_outline,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                  ),
-                  hintText: "Password",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  suffixIcon: IconButton(
-                    icon: Icon(secure ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        secure = !secure;
-                      });
-                    },
-                  )
-                ),
+                    focusColor: Colors.lightGreen,
+                    icon: Icon(
+                      Icons.lock_outline,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                    hintText: "Password",
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          secure ? Icons.visibility_off : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          secure = !secure;
+                        });
+                      },
+                    )),
               ),
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext ctx) {
-                  return Navbar();
-                  // Write Click Listener Code Here
-                }));
-                // Write Click Listener Code Here.
+                FirebaseAuth.instance
+                    .createUserWithEmailAndPassword(
+                        email: ctrlEmail.text, password: ctrlPassword.text)
+                    .then((value) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Navbar()));
+                }).onError((error, stackTrace) {
+                  print("Error ${error.toString()}");
+                  // Write Tap Code Here.
+                });
               },
               child: Container(
                 alignment: Alignment.center,
@@ -178,25 +184,30 @@ class StartState extends State<LoginScreen> {
                 children: [
                   Text("Belum Punya Akun?  "),
                   GestureDetector(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(color: Color.fromARGB(255, 99, 194, 94)),
-                    ),
-                    onTap: () {
-                      //Write Tap Code Here.
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignUpScreen(),
-                          ));
-                    },
-                  )
+                      child: Text(
+                        "Sign Up",
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 99, 194, 94)),
+                      ),
+                      onTap: () {
+                        FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: ctrlEmail.text,
+                                password: ctrlPassword.text)
+                            .then((value) {
+                          Navigator.pop(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpScreen()));
+                        }).onError((error, stackTrace) {
+                          print("Error ${error.toString()}");
+                          // Write Tap Code Here.
+                        });
+                      })
                 ],
               ),
             )
           ],
         )));
   }
-
-  //SocalIcon({String? iconSrc, Null Function()? press}) {}
 }

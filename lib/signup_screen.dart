@@ -1,8 +1,13 @@
 import 'package:CasperCar/navbar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/history.dart';
 import 'package:CasperCar/home.dart';
 import 'package:CasperCar/login_screen.dart';
+
+TextEditingController ctrlEmail = TextEditingController();
+TextEditingController ctrlPassword = TextEditingController();
+TextEditingController ctrlUsername = TextEditingController();
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -99,22 +104,22 @@ class InitState extends State<SignUpScreen> {
                 obscureText: secure,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.lock_outline,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                  ),
-                  hintText: "Password",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  suffixIcon: IconButton(
-                    icon: Icon(secure ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        secure = !secure;
-                      });
-                    },
-                  )
-                ),
+                    icon: Icon(
+                      Icons.lock_outline,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                    hintText: "Password",
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          secure ? Icons.visibility_off : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          secure = !secure;
+                        });
+                      },
+                    )),
               ),
             ),
             Container(
@@ -136,23 +141,23 @@ class InitState extends State<SignUpScreen> {
                 obscureText: secureC,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
-                  focusColor: Colors.lightGreen,
-                  icon: Icon(
-                    Icons.lock_outline,
-                    color: Color.fromARGB(255, 2, 2, 2),
-                  ),
-                  hintText: "Confirm Password",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  suffixIcon: IconButton(
-                    icon: Icon(secureC ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        secureC = !secureC;
-                      });
-                    },
-                  )
-                ),
+                    focusColor: Colors.lightGreen,
+                    icon: Icon(
+                      Icons.lock_outline,
+                      color: Color.fromARGB(255, 2, 2, 2),
+                    ),
+                    hintText: "Confirm Password",
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          secureC ? Icons.visibility_off : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          secureC = !secureC;
+                        });
+                      },
+                    )),
               ),
             ),
             Container(
@@ -307,12 +312,16 @@ class InitState extends State<SignUpScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    // ignore: dead_code
-                    MaterialPageRoute(builder: (BuildContext ctx) {
-                  return Navbar();
-                }));
-                // Write Click Listener Code Here.
+                FirebaseAuth.instance
+                    .createUserWithEmailAndPassword(
+                        email: ctrlEmail.text, password: ctrlPassword.text)
+                    .then((value) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Navbar()));
+                }).onError((error, stackTrace) {
+                  print("Error ${error.toString()}");
+                  // Write Tap Code Here.
+                });
               },
               child: Container(
                 alignment: Alignment.center,
@@ -347,18 +356,25 @@ class InitState extends State<SignUpScreen> {
                 children: [
                   Text("Sudah Punya Akun?  "),
                   GestureDetector(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(color: Colors.lightGreen),
-                    ),
-                    onTap: () {
-                      // Write Tap Code Here.
-                      Navigator.pop(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
-                    },
-                  )
+                      child: Text(
+                        "Login",
+                        style: TextStyle(color: Colors.lightGreen),
+                      ),
+                      onTap: () {
+                        FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: ctrlEmail.text,
+                                password: ctrlPassword.text)
+                            .then((value) {
+                          Navigator.pop(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        }).onError((error, stackTrace) {
+                          print("Error ${error.toString()}");
+                          // Write Tap Code Here.
+                        });
+                      })
                 ],
               ),
             )
