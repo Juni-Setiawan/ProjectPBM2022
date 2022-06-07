@@ -5,16 +5,21 @@ import 'package:CasperCar/history.dart';
 import 'package:CasperCar/home.dart';
 import 'package:CasperCar/login_screen.dart';
 
-TextEditingController ctrlEmail = TextEditingController();
-TextEditingController ctrlPassword = TextEditingController();
-TextEditingController ctrlUsername = TextEditingController();
-
 class SignUpScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => InitState();
 }
 
 class InitState extends State<SignUpScreen> {
+  TextEditingController ctrlEmail = TextEditingController();
+  TextEditingController ctrlPassword = TextEditingController();
+  TextEditingController ctrlConfirmPassword = TextEditingController();
+  TextEditingController ctrlUsername = TextEditingController();
+  TextEditingController ctrlNamaLengkap = TextEditingController();
+  TextEditingController ctrlTanggalLahir = TextEditingController();
+  TextEditingController ctrlNoHP = TextEditingController();
+  TextEditingController ctrlAlamatLengkap = TextEditingController();
+  TextEditingController ctrlNoKTP = TextEditingController();
   var SignUpScreen1;
 
   late bool secure;
@@ -73,6 +78,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlEmail,
                 cursorColor: Color.fromARGB(255, 20, 20, 20),
                 decoration: InputDecoration(
                   icon: Icon(
@@ -101,6 +107,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlPassword,
                 obscureText: secure,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
@@ -138,6 +145,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlConfirmPassword,
                 obscureText: secureC,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
@@ -176,6 +184,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlNamaLengkap,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -206,6 +215,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlTanggalLahir,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -236,6 +246,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlNoHP,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -266,6 +277,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlAlamatLengkap,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -296,6 +308,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlNoKTP,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(

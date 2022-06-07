@@ -15,6 +15,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class StartState extends State<LoginScreen> {
+  TextEditingController ctrlEmail = TextEditingController();
+  TextEditingController ctrlPassword = TextEditingController();
   late bool secure;
 
   @override
@@ -88,6 +90,7 @@ class StartState extends State<LoginScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlEmail,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   icon: Icon(
@@ -116,6 +119,7 @@ class StartState extends State<LoginScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlPassword,
                 obscureText: secure,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
@@ -141,7 +145,7 @@ class StartState extends State<LoginScreen> {
             GestureDetector(
               onTap: () {
                 FirebaseAuth.instance
-                    .createUserWithEmailAndPassword(
+                    .signInWithEmailAndPassword(
                         email: ctrlEmail.text, password: ctrlPassword.text)
                     .then((value) {
                   Navigator.push(context,
@@ -190,19 +194,10 @@ class StartState extends State<LoginScreen> {
                             TextStyle(color: Color.fromARGB(255, 99, 194, 94)),
                       ),
                       onTap: () {
-                        FirebaseAuth.instance
-                            .createUserWithEmailAndPassword(
-                                email: ctrlEmail.text,
-                                password: ctrlPassword.text)
-                            .then((value) {
-                          Navigator.pop(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignUpScreen()));
-                        }).onError((error, stackTrace) {
-                          print("Error ${error.toString()}");
-                          // Write Tap Code Here.
-                        });
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUpScreen()));
                       })
                 ],
               ),
