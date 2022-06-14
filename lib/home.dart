@@ -1,4 +1,5 @@
 import 'package:CasperCar/chatPage.dart';
+import 'package:CasperCar/detail.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/daftar_mobil.dart';
 import 'package:CasperCar/navbar.dart';
@@ -123,106 +124,161 @@ class _StartHomePageState extends State<StartHomePage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF7A7A7A),
-                            ),
-                            child: Image.asset(
-                              'assets/images/toyota.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        const Text(
-                          'Toyota Avanza\n1.3 E MT',
-                        ),
-                        Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF7A7A7A),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0, 2, 0, 0),
-                              child: Image.asset(
-                                'assets/images/honda.png',
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.contain,
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Detail(index: 0),
+                                )
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                child: Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF7A7A7A),
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/toyota.png',
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
-                            ),
+                              Text(
+                                'Toyota Avanza\n1.3 E MT',
+                              ),
+                            ],
                           ),
                         ),
-                        const Text(
-                          'Honda HR-V 1.5L E CVT',
-                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Detail(index: 1),
+                                )
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                child: Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF7A7A7A),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0, 2, 0, 0),
+                                    child: Image.asset(
+                                      'assets/images/honda.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                'Honda HR-V 1.5L E CVT',
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF7A7A7A),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0xFF7A7A7A),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Detail(index: 2),
                                 )
-                              ],
-                            ),
-                            child: Image.asset(
-                              'assets/images/mercedes.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.contain,
-                            ),
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                child: Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF7A7A7A),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Color(0xFF7A7A7A),
+                                      )
+                                    ],
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/mercedes.png',
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                'Mercedes Benz\nCL Class',
+                              ),
+                            ],
                           ),
                         ),
-                        const Text(
-                          'Mercedes Benz\nCL Class',
-                        ),
-                        Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF7A7A7A),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0xFF7A7A7A),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Detail(index: 3),
                                 )
-                              ],
-                            ),
-                            child: Image.asset(
-                              'assets/images/bmw.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.contain,
-                            ),
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                child: Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF7A7A7A),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Color(0xFF7A7A7A),
+                                      )
+                                    ],
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/bmw.png',
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                'BMW 320i',
+                              ),
+                            ],
                           ),
-                        ),
-                        const Text(
-                          'BMW 320i',
-                        ),
+                        )
                       ],
                     ),
                   ],

@@ -1,4 +1,5 @@
 import 'package:CasperCar/home.dart';
+import 'package:CasperCar/navbar.dart';
 import 'package:CasperCar/scanqr.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,7 @@ class _transacsionsuccessState extends State<transacsionsuccess> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return HomePage();
+                          return Navbar();
                         },
                       ),
                     );

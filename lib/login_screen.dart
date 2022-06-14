@@ -13,6 +13,14 @@ class LoginScreen extends StatefulWidget {
 }
 
 class StartState extends State<LoginScreen> {
+  late bool secure;
+
+  @override
+  void initState() {
+    secure = false;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return initWidget();
@@ -106,7 +114,7 @@ class StartState extends State<LoginScreen> {
                 ],
               ),
               child: TextField(
-                obscureText: true,
+                obscureText: secure,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
                   focusColor: Colors.lightGreen,
@@ -117,6 +125,14 @@ class StartState extends State<LoginScreen> {
                   hintText: "Password",
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
+                  suffixIcon: IconButton(
+                    icon: Icon(secure ? Icons.visibility_off : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        secure = !secure;
+                      });
+                    },
+                  )
                 ),
               ),
             ),

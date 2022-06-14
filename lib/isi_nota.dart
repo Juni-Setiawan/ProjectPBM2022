@@ -43,10 +43,7 @@ class _IsiNotaState extends State<IsiNota> {
               ),
               leading: IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const cart()),
-                  );
+                  Navigator.pop(context);
                 },
                 icon: Icon(
                   Icons.arrow_back,
