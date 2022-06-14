@@ -15,11 +15,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class StartState extends State<LoginScreen> {
-<<<<<<< HEAD
-=======
   TextEditingController ctrlEmail = TextEditingController();
   TextEditingController ctrlPassword = TextEditingController();
->>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
   late bool secure;
 
   @override
@@ -122,28 +119,6 @@ class StartState extends State<LoginScreen> {
                 ],
               ),
               child: TextField(
-<<<<<<< HEAD
-                obscureText: secure,
-                cursorColor: Colors.lightGreen,
-                decoration: InputDecoration(
-                  focusColor: Colors.lightGreen,
-                  icon: Icon(
-                    Icons.lock_outline,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                  ),
-                  hintText: "Password",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  suffixIcon: IconButton(
-                    icon: Icon(secure ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        secure = !secure;
-                      });
-                    },
-                  )
-                ),
-=======
                 controller: ctrlPassword,
                 obscureText: secure,
                 cursorColor: Colors.lightGreen,
@@ -165,7 +140,6 @@ class StartState extends State<LoginScreen> {
                         });
                       },
                     )),
->>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
               ),
             ),
             GestureDetector(

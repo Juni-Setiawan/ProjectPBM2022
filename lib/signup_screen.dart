@@ -107,27 +107,6 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
-<<<<<<< HEAD
-                obscureText: secure,
-                cursorColor: Colors.lightGreen,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.lock_outline,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                  ),
-                  hintText: "Password",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  suffixIcon: IconButton(
-                    icon: Icon(secure ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        secure = !secure;
-                      });
-                    },
-                  )
-                ),
-=======
                 controller: ctrlPassword,
                 obscureText: secure,
                 cursorColor: Colors.lightGreen,
@@ -148,7 +127,6 @@ class InitState extends State<SignUpScreen> {
                         });
                       },
                     )),
->>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
               ),
             ),
             Container(
@@ -167,28 +145,6 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
-<<<<<<< HEAD
-                obscureText: secureC,
-                cursorColor: Colors.lightGreen,
-                decoration: InputDecoration(
-                  focusColor: Colors.lightGreen,
-                  icon: Icon(
-                    Icons.lock_outline,
-                    color: Color.fromARGB(255, 2, 2, 2),
-                  ),
-                  hintText: "Confirm Password",
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  suffixIcon: IconButton(
-                    icon: Icon(secureC ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        secureC = !secureC;
-                      });
-                    },
-                  )
-                ),
-=======
                 controller: ctrlConfirmPassword,
                 obscureText: secureC,
                 cursorColor: Colors.lightGreen,
@@ -210,7 +166,6 @@ class InitState extends State<SignUpScreen> {
                         });
                       },
                     )),
->>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
               ),
             ),
             Container(
