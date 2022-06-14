@@ -1,4 +1,5 @@
 import 'package:CasperCar/navbar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/history.dart';
 import 'package:CasperCar/home.dart';
@@ -10,6 +11,15 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class InitState extends State<SignUpScreen> {
+  TextEditingController ctrlEmail = TextEditingController();
+  TextEditingController ctrlPassword = TextEditingController();
+  TextEditingController ctrlConfirmPassword = TextEditingController();
+  TextEditingController ctrlUsername = TextEditingController();
+  TextEditingController ctrlNamaLengkap = TextEditingController();
+  TextEditingController ctrlTanggalLahir = TextEditingController();
+  TextEditingController ctrlNoHP = TextEditingController();
+  TextEditingController ctrlAlamatLengkap = TextEditingController();
+  TextEditingController ctrlNoKTP = TextEditingController();
   var SignUpScreen1;
 
   late bool secure;
@@ -68,6 +78,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlEmail,
                 cursorColor: Color.fromARGB(255, 20, 20, 20),
                 decoration: InputDecoration(
                   icon: Icon(
@@ -96,6 +107,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+<<<<<<< HEAD
                 obscureText: secure,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
@@ -115,6 +127,28 @@ class InitState extends State<SignUpScreen> {
                     },
                   )
                 ),
+=======
+                controller: ctrlPassword,
+                obscureText: secure,
+                cursorColor: Colors.lightGreen,
+                decoration: InputDecoration(
+                    icon: Icon(
+                      Icons.lock_outline,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                    hintText: "Password",
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          secure ? Icons.visibility_off : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          secure = !secure;
+                        });
+                      },
+                    )),
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
               ),
             ),
             Container(
@@ -133,6 +167,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+<<<<<<< HEAD
                 obscureText: secureC,
                 cursorColor: Colors.lightGreen,
                 decoration: InputDecoration(
@@ -153,6 +188,29 @@ class InitState extends State<SignUpScreen> {
                     },
                   )
                 ),
+=======
+                controller: ctrlConfirmPassword,
+                obscureText: secureC,
+                cursorColor: Colors.lightGreen,
+                decoration: InputDecoration(
+                    focusColor: Colors.lightGreen,
+                    icon: Icon(
+                      Icons.lock_outline,
+                      color: Color.fromARGB(255, 2, 2, 2),
+                    ),
+                    hintText: "Confirm Password",
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                          secureC ? Icons.visibility_off : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          secureC = !secureC;
+                        });
+                      },
+                    )),
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
               ),
             ),
             Container(
@@ -171,6 +229,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlNamaLengkap,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -201,6 +260,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlTanggalLahir,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -231,6 +291,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlNoHP,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -261,6 +322,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlAlamatLengkap,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -291,6 +353,7 @@ class InitState extends State<SignUpScreen> {
                 ],
               ),
               child: TextField(
+                controller: ctrlNoKTP,
                 cursorColor: Colors.lightGreen,
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
@@ -307,12 +370,16 @@ class InitState extends State<SignUpScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    // ignore: dead_code
-                    MaterialPageRoute(builder: (BuildContext ctx) {
-                  return Navbar();
-                }));
-                // Write Click Listener Code Here.
+                FirebaseAuth.instance
+                    .createUserWithEmailAndPassword(
+                        email: ctrlEmail.text, password: ctrlPassword.text)
+                    .then((value) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Navbar()));
+                }).onError((error, stackTrace) {
+                  print("Error ${error.toString()}");
+                  // Write Tap Code Here.
+                });
               },
               child: Container(
                 alignment: Alignment.center,
@@ -347,18 +414,25 @@ class InitState extends State<SignUpScreen> {
                 children: [
                   Text("Sudah Punya Akun?  "),
                   GestureDetector(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(color: Colors.lightGreen),
-                    ),
-                    onTap: () {
-                      // Write Tap Code Here.
-                      Navigator.pop(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
-                    },
-                  )
+                      child: Text(
+                        "Login",
+                        style: TextStyle(color: Colors.lightGreen),
+                      ),
+                      onTap: () {
+                        FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: ctrlEmail.text,
+                                password: ctrlPassword.text)
+                            .then((value) {
+                          Navigator.pop(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        }).onError((error, stackTrace) {
+                          print("Error ${error.toString()}");
+                          // Write Tap Code Here.
+                        });
+                      })
                 ],
               ),
             )

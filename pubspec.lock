@@ -78,6 +78,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+<<<<<<< HEAD
   ffi:
     dependency: transitive
     description:
@@ -92,6 +93,50 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.2"
+=======
+  firebase_auth:
+    dependency: "direct main"
+    description:
+      name: firebase_auth
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.3.19"
+  firebase_auth_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_auth_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.2.7"
+  firebase_auth_web:
+    dependency: transitive
+    description:
+      name: firebase_auth_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.3.16"
+  firebase_core:
+    dependency: "direct main"
+    description:
+      name: firebase_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.17.1"
+  firebase_core_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_core_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.4.0"
+  firebase_core_web:
+    dependency: transitive
+    description:
+      name: firebase_core_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.6.4"
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
   flare_flutter:
     dependency: transitive
     description:
@@ -198,6 +243,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1"
+<<<<<<< HEAD
   google_fonts:
     dependency: "direct main"
     description:
@@ -205,6 +251,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
+=======
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
   google_maps_flutter:
     dependency: "direct main"
     description:
@@ -219,6 +267,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.7"
+<<<<<<< HEAD
   http:
     dependency: transitive
     description:
@@ -226,6 +275,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.13.4"
+=======
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
   http_parser:
     dependency: transitive
     description:
@@ -233,6 +284,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.1"
+<<<<<<< HEAD
+=======
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.17.0"
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
   js:
     dependency: transitive
     description:
@@ -345,6 +406,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
+<<<<<<< HEAD
   process:
     dependency: transitive
     description:
@@ -352,6 +414,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
+=======
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
   rflutter_alert:
     dependency: "direct main"
     description:

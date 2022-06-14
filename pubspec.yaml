@@ -14,6 +14,7 @@ dependencies:
   flutter_barcode_scanner: 2.0.0
   geolocator: 8.2.1
   geocoding: 2.0.4
+<<<<<<< HEAD
   google_fonts: ^3.0.1
   flutter: 
     sdk: flutter
@@ -23,6 +24,19 @@ dev_dependencies:
   flutter_test: 
     sdk: flutter
 
+=======
+  flutter: 
+    sdk: flutter
+  
+  firebase_core: ^1.17.1
+  firebase_auth: ^3.3.19
+
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  flutter_test: 
+    sdk: flutter
+
+>>>>>>> 1caba59d7f06a1c39da57048c99e785d6792b819
 flutter: 
   assets: 
     - assets/images/caspercar.png
