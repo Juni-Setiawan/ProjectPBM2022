@@ -29,7 +29,7 @@ class _cartState extends State<cart> {
       appBar: AppBar(
         title: Center(
           child: Text(
-            "Keranjang",
+            "KERANJANG",
             style: TextStyle(
                 color: Colors.black, fontWeight: FontWeight.w600, fontSize: 24),
           ),
