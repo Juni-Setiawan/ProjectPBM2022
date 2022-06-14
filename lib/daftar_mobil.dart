@@ -47,12 +47,12 @@ class _daftarMobilState extends State<daftarMobil> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
-                  onTap: (){
-                    if(indeks == 0){
+                  onTap: () {
+                    if (indeks == 0) {
                       setState(() {
                         indeks = 3;
                       });
-                    }else{
+                    } else {
                       setState(() {
                         indeks -= 1;
                       });
@@ -69,17 +69,15 @@ class _daftarMobilState extends State<daftarMobil> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(mobilList[indeks].gambar),
-                          fit: BoxFit.cover
-                      )
-                  ),
+                          fit: BoxFit.cover)),
                 ),
                 GestureDetector(
-                  onTap: (){
-                    if(indeks == 3){
+                  onTap: () {
+                    if (indeks == 3) {
                       setState(() {
                         indeks = 0;
                       });
-                    }else{
+                    } else {
                       setState(() {
                         indeks += 1;
                       });
@@ -92,21 +90,30 @@ class _daftarMobilState extends State<daftarMobil> {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Text(
               "${mobilList[indeks].nama}",
-              style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 20, color: Color(0xFF000000)),
+              style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                  color: Color(0xFF000000)),
             ),
             Text(
               "${mobilList[indeks].plat}",
-              style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 18, color: Color(0xFF000000).withOpacity(0.5)),
+              style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                  color: Color(0xFF000000).withOpacity(0.5)),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               decoration: BoxDecoration(
                   color: Color(0xFFC4C4C4),
-                  border: Border.all(color: Colors.black)
-              ),
+                  border: Border.all(color: Colors.black)),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.205,
               child: DefaultTabController(
@@ -116,11 +123,15 @@ class _daftarMobilState extends State<daftarMobil> {
                     Container(
                       child: TabBar(
                         indicatorColor: Colors.transparent,
-                        indicator: BoxDecoration(
-                            color: Colors.black
-                        ),
-                        labelStyle: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w400, color: Color(0xFFFFFFFF)),
-                        unselectedLabelStyle: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w400, color: Color(0xFF000000)),
+                        indicator: BoxDecoration(color: Colors.black),
+                        labelStyle: GoogleFonts.montserrat(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFFFFFFFF)),
+                        unselectedLabelStyle: GoogleFonts.montserrat(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF000000)),
                         unselectedLabelColor: Colors.black,
                         tabs: [
                           Tab(text: 'Spesifikasi'),
@@ -136,83 +147,117 @@ class _daftarMobilState extends State<daftarMobil> {
                             height: MediaQuery.of(context).size.height,
                             decoration: BoxDecoration(
                                 border: Border(
-                                  top: BorderSide(
-                                      color: Colors.black,
-                                      style: BorderStyle.solid
-                                  ), //BorderSide
-                                )
-                            ),
+                              top: BorderSide(
+                                  color: Colors.black,
+                                  style: BorderStyle.solid), //BorderSide
+                            )),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Expanded(
                                     child: Container(
-                                      padding: EdgeInsets.only(top: 4, left: 4),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Merek",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            "Model",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            "Varian",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            "Jenis Bahan Bakar",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            "Mesin",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            "Jumlah Kursi",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          )
-                                        ],
+                                  padding: EdgeInsets.only(top: 4, left: 4),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Merek",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
                                       ),
-                                    )
-                                ),
+                                      Text(
+                                        "Model",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        "Varian",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        "Jenis Bahan Bakar",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        "Mesin",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        "Jumlah Kursi",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      )
+                                    ],
+                                  ),
+                                )),
                                 Expanded(
                                     child: Container(
-                                      padding: EdgeInsets.only(top: 4),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            ": ${mobilList[indeks].merek}",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            ": ${mobilList[indeks].model}",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            ": ${mobilList[indeks].varian}",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            ": ${mobilList[indeks].bahan}",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            ": ${mobilList[indeks].mesin}",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          ),
-                                          Text(
-                                            ": ${mobilList[indeks].kursi}",
-                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
-                                          )
-                                        ],
+                                  padding: EdgeInsets.only(top: 4),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        ": ${mobilList[indeks].merek}",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
                                       ),
-                                    )
-                                ),
+                                      Text(
+                                        ": ${mobilList[indeks].model}",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        ": ${mobilList[indeks].varian}",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        ": ${mobilList[indeks].bahan}",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        ": ${mobilList[indeks].mesin}",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      ),
+                                      Text(
+                                        ": ${mobilList[indeks].kursi}",
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xFF000000)),
+                                      )
+                                    ],
+                                  ),
+                                )),
                               ],
                             ),
                           ),
@@ -221,16 +266,12 @@ class _daftarMobilState extends State<daftarMobil> {
                             height: MediaQuery.of(context).size.height,
                             decoration: BoxDecoration(
                                 border: Border(
-                                  top: BorderSide(
-                                      color: Colors.black,
-                                      style: BorderStyle.solid
-                                  ), //BorderSide
-                                )
-                            ),
+                              top: BorderSide(
+                                  color: Colors.black,
+                                  style: BorderStyle.solid), //BorderSide
+                            )),
                             child: Center(
-                              child: Text(
-                                  "Belum Tersedia"
-                              ),
+                              child: Text("Belum Tersedia"),
                             ),
                           ),
                         ],
@@ -240,36 +281,40 @@ class _daftarMobilState extends State<daftarMobil> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Text(
               "1 Hari : ${mobilList[indeks].harga}",
-              style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 18, color: Color(0xFF000000)),
+              style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                  color: Color(0xFF000000)),
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Align(
               alignment: Alignment.center,
               child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) {
-                    //       return IsiNota();
-                    //     },
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return IsiNota();
+                        },
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)
-                      ),
+                          borderRadius: BorderRadius.circular(14)),
                       primary: Color(0xFF60F077),
-                      onPrimary: Color(0xFF000000)
-                  ),
+                      onPrimary: Color(0xFF000000)),
                   child: const Text(
                     "Sewa",
-                  )
-              ),
+                  )),
             )
           ],
         ),
