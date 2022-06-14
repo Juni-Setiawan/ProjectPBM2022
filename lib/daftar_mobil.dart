@@ -1,11 +1,9 @@
 import 'package:CasperCar/dataCustomer.dart';
 import 'package:CasperCar/isi_nota.dart';
+import 'package:CasperCar/model/mobil_model.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/home.dart';
-
-void main(List<String> args) {
-  runApp(const daftarMobil());
-}
+import 'package:google_fonts/google_fonts.dart';
 
 class daftarMobil extends StatefulWidget {
   const daftarMobil({Key? key}) : super(key: key);
@@ -15,94 +13,266 @@ class daftarMobil extends StatefulWidget {
 }
 
 class _daftarMobilState extends State<daftarMobil> {
+  int indeks = 0;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: StartdaftarMobil(),
-    );
-  }
-}
-
-class StartdaftarMobil extends StatefulWidget {
-  const StartdaftarMobil({Key? key}) : super(key: key);
-
-  @override
-  State<StartdaftarMobil> createState() => __StartdaftarMobilState();
-}
-
-class __StartdaftarMobilState extends State<StartdaftarMobil> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(
-            child: Text(
-              "Daftar Mobil",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 24),
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            "Daftar Mobil",
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.w600, fontSize: 24),
           ),
-          backgroundColor: Color.fromARGB(255, 97, 203, 115),
-          leading: IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomePage(),
-                    ));
-              },
-              icon: Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-              )),
         ),
-        body: SingleChildScrollView(
-            child: Column(
+        backgroundColor: Color.fromARGB(255, 97, 203, 115),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            )),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(10),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                GestureDetector(
+                  onTap: (){
+                    if(indeks == 0){
+                      setState(() {
+                        indeks = 3;
+                      });
+                    }else{
+                      setState(() {
+                        indeks -= 1;
+                      });
+                    }
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 40,
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.65,
+                  height: MediaQuery.of(context).size.height * 0.15,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(mobilList[indeks].gambar),
+                          fit: BoxFit.cover
+                      )
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    if(indeks == 3){
+                      setState(() {
+                        indeks = 0;
+                      });
+                    }else{
+                      setState(() {
+                        indeks += 1;
+                      });
+                    }
+                  },
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    size: 40,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Text(
+              "${mobilList[indeks].nama}",
+              style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 20, color: Color(0xFF000000)),
+            ),
+            Text(
+              "${mobilList[indeks].plat}",
+              style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 18, color: Color(0xFF000000).withOpacity(0.5)),
+            ),
+            SizedBox(height: 10,),
             Container(
-              alignment: Alignment.center,
-              child: Image(
-                image: AssetImage(
-                  "assets/images/toyota.png",
+              decoration: BoxDecoration(
+                  color: Color(0xFFC4C4C4),
+                  border: Border.all(color: Colors.black)
+              ),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.205,
+              child: DefaultTabController(
+                length: 2,
+                child: Column(
+                  children: [
+                    Container(
+                      child: TabBar(
+                        indicatorColor: Colors.transparent,
+                        indicator: BoxDecoration(
+                            color: Colors.black
+                        ),
+                        labelStyle: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w400, color: Color(0xFFFFFFFF)),
+                        unselectedLabelStyle: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w400, color: Color(0xFF000000)),
+                        unselectedLabelColor: Colors.black,
+                        tabs: [
+                          Tab(text: 'Spesifikasi'),
+                          Tab(text: 'Ketentuan Sewa')
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: MediaQuery.of(context).size.height,
+                            decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(
+                                      color: Colors.black,
+                                      style: BorderStyle.solid
+                                  ), //BorderSide
+                                )
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                    child: Container(
+                                      padding: EdgeInsets.only(top: 4, left: 4),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Merek",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            "Model",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            "Varian",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            "Jenis Bahan Bakar",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            "Mesin",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            "Jumlah Kursi",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                                Expanded(
+                                    child: Container(
+                                      padding: EdgeInsets.only(top: 4),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            ": ${mobilList[indeks].merek}",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            ": ${mobilList[indeks].model}",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            ": ${mobilList[indeks].varian}",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            ": ${mobilList[indeks].bahan}",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            ": ${mobilList[indeks].mesin}",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          ),
+                                          Text(
+                                            ": ${mobilList[indeks].kursi}",
+                                            style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14, color: Color(0xFF000000)),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: MediaQuery.of(context).size.height,
+                            decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(
+                                      color: Colors.black,
+                                      style: BorderStyle.solid
+                                  ), //BorderSide
+                                )
+                            ),
+                            child: Center(
+                              child: Text(
+                                  "Belum Tersedia"
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            Container(
-              alignment: Alignment.bottomLeft,
-              child: Text("Toyota Avanza 1.3 E MT"),
+            SizedBox(height: 10,),
+            Text(
+              "1 Hari : ${mobilList[indeks].harga}",
+              style: GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 18, color: Color(0xFF000000)),
             ),
-            Container(
-              alignment: Alignment.bottomLeft,
-              child: Text("P 3821 AA"),
-            ),
-            Container(
-              alignment: Alignment.bottomCenter,
-              padding: const EdgeInsets.only(top: 200),
+            SizedBox(height: 30,),
+            Align(
+              alignment: Alignment.center,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return dataCustomer();
-                        },
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) {
+                    //       return IsiNota();
+                    //     },
+                    //   ),
+                    // );
                   },
                   style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(200, 50),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      primary: Color.fromARGB(255, 99, 194, 94)),
+                          borderRadius: BorderRadius.circular(14)
+                      ),
+                      primary: Color(0xFF60F077),
+                      onPrimary: Color(0xFF000000)
+                  ),
                   child: const Text(
                     "Sewa",
-                  )),
-            ),
+                  )
+              ),
+            )
           ],
-        )),
+        ),
       ),
     );
   }
