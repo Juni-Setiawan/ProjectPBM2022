@@ -1,4 +1,5 @@
 import 'package:CasperCar/cart.dart';
+import 'package:CasperCar/payment.dart';
 import 'package:CasperCar/scanqr.dart';
 import 'package:flutter/material.dart';
 
@@ -234,7 +235,7 @@ class _IsiNotaState extends State<IsiNota> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ScanQR(),
+                            builder: (context) => const PaymentPage(),
                           ));
                     },
                     child: Text('Selanjutnya'),

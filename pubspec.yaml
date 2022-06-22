@@ -40,6 +40,8 @@ flutter:
     - assets/images/bmw.png
     - assets/images/berhasil.png
     - assets/images/gagal.png
+    - assets/images/virtualaccount.png
+    - assets/images/wallet.png
   fonts: 
     - family: Montserrat
   uses-material-design: true
