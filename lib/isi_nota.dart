@@ -2,35 +2,32 @@ import 'package:CasperCar/cart.dart';
 import 'package:CasperCar/payment.dart';
 import 'package:CasperCar/scanqr.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() => runApp(const IsiNotaPage());
+void main() => runApp(IsiNota());
 
-class IsiNotaPage extends StatelessWidget {
-  const IsiNotaPage({Key? key}) : super(key: key);
-
-  static const String _title = 'Isi Nota';
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: IsiNota(),
-    );
+    throw UnimplementedError();
   }
 }
 
-class IsiNota extends StatefulWidget {
-  const IsiNota({Key? key}) : super(key: key);
-
-  @override
-  State<IsiNota> createState() => _IsiNotaState();
-}
-
-class _IsiNotaState extends State<IsiNota> {
-  String dropdownValue = 'Select option';
+class IsiNota extends StatelessWidget {
+  IsiNota({Key? key}) : super(key: key);
+  final TextEditingController namacontroller = TextEditingController();
+  final TextEditingController alamatcontroller = TextEditingController();
+  final TextEditingController jenismobilcontroller = TextEditingController();
+  final TextEditingController nomobilcontroller = TextEditingController();
+  final TextEditingController lamasewacontroller = TextEditingController();
+  final TextEditingController biayacontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference users = firestore.collection('isi nota');
+    {}
+
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
@@ -68,6 +65,7 @@ class _IsiNotaState extends State<IsiNota> {
               ),
               //textfield nama
               TextField(
+                controller: namacontroller,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFC4C4C4),
                   filled: true,
@@ -92,6 +90,7 @@ class _IsiNotaState extends State<IsiNota> {
               ),
               //textfield alamat
               TextField(
+                controller: alamatcontroller,
                 keyboardType: TextInputType.multiline,
                 minLines: 5,
                 maxLines: null,
@@ -117,36 +116,21 @@ class _IsiNotaState extends State<IsiNota> {
                   style: TextStyle(fontSize: 16),
                 ),
               ),
-
-              //text Jenis mobil
-              DropdownButton<String>(
-                value: dropdownValue,
-                icon: const Icon(Icons.arrow_drop_down),
-                elevation: 16,
-                style: const TextStyle(
-                  color: Colors.black,
+              //textfield jenis mobil
+              TextField(
+                controller: jenismobilcontroller,
+                decoration: InputDecoration(
+                  fillColor: Color(0xFFC4C4C4),
+                  filled: true,
+                  contentPadding: const EdgeInsets.only(left: 10, right: 10),
+                  enabledBorder: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(0)),
+                    borderSide: const BorderSide(color: Colors.grey, width: 1),
+                  ),
+                  hintText: "jenis mobil",
                 ),
-                underline: Container(
-                  height: 2,
-                  color: Color(0xFFC4C4C4),
-                ),
-                onChanged: (String? newValue) {
-                  setState(() {
-                    dropdownValue = newValue!;
-                  });
-                },
-                items: <String>[
-                  'Select option',
-                  'Toyota Avanza 1.3 E MT',
-                  'Mercedes Benz CL Class',
-                  'Honda Jazz RS CVT'
-                ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
               ),
+
               //text nomor mobil
               Container(
                 width: 100,
@@ -159,6 +143,7 @@ class _IsiNotaState extends State<IsiNota> {
               ),
               //textfield nomor mobil
               TextField(
+                controller: nomobilcontroller,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFC4C4C4),
                   filled: true,
@@ -177,12 +162,13 @@ class _IsiNotaState extends State<IsiNota> {
                 height: 20,
                 margin: EdgeInsets.only(top: 10),
                 child: Text(
-                  "Jenis mobil",
+                  "Lama Sewa",
                   style: TextStyle(fontSize: 16),
                 ),
               ),
               //textfield Lama sewa
               TextField(
+                controller: lamasewacontroller,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFC4C4C4),
                   filled: true,
@@ -208,6 +194,7 @@ class _IsiNotaState extends State<IsiNota> {
               ),
               //textfield biaya
               TextField(
+                controller: biayacontroller,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFC4C4C4),
                   filled: true,
@@ -231,12 +218,33 @@ class _IsiNotaState extends State<IsiNota> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0)),
                     ),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PaymentPage(),
-                          ));
+                    onPressed: () async {
+                      print(namacontroller.text);
+                      print(alamatcontroller.text);
+                      print(jenismobilcontroller.text);
+                      print(nomobilcontroller.text);
+                      print(lamasewacontroller.text);
+                      print(biayacontroller.text);
+                      await users.add({
+                        'nama': namacontroller.text,
+                        'alamat': alamatcontroller.text,
+                        'jenismobil': jenismobilcontroller.text,
+                        'nomobil': int.tryParse(nomobilcontroller.text) ?? 0,
+                        'lamasewa': int.tryParse(lamasewacontroller.text) ?? 0,
+                        'biaya': int.tryParse(biayacontroller.text) ?? 0,
+                      });
+
+                      print(namacontroller.text = '');
+                      print(alamatcontroller.text = '');
+                      print(jenismobilcontroller.text);
+                      print(nomobilcontroller.text);
+                      print(lamasewacontroller.text);
+                      print(biayacontroller.text);
+
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return PaymentPage();
+                      }));
                     },
                     child: Text('Selanjutnya'),
                   ))
