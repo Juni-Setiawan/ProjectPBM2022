@@ -302,7 +302,7 @@ class _daftarMobilState extends State<daftarMobil> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return IsiNota();
+                          return dataCustomer();
                         },
                       ),
                     );
