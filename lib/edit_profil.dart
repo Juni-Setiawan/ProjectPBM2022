@@ -1,13 +1,29 @@
 import 'package:CasperCar/profile.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:CasperCar/widget/costum_button_profile.dart';
 import 'package:CasperCar/widget/custom_button_edit.dart';
 
+class mainpage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    throw UnimplementedError();
+  }
+}
+
 class EditProfile extends StatelessWidget {
-  const EditProfile({Key? key}) : super(key: key);
+  EditProfile({Key? key}) : super(key: key);
+  final TextEditingController namacontroller = TextEditingController();
+  final TextEditingController noktpcontroller = TextEditingController();
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController nohpcontroller = TextEditingController();
+  final TextEditingController alamatcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference users = firestore.collection('edit');
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -100,6 +116,7 @@ class EditProfile extends StatelessWidget {
                   ],
                 ),
                 child: TextField(
+                  controller: namacontroller,
                   cursorColor: Color.fromARGB(255, 20, 20, 20),
                   decoration: InputDecoration(
                     hintText: "Nama",
@@ -124,6 +141,7 @@ class EditProfile extends StatelessWidget {
                   ],
                 ),
                 child: TextField(
+                  controller: noktpcontroller,
                   cursorColor: Color.fromARGB(255, 20, 20, 20),
                   decoration: InputDecoration(
                     hintText: "No. KTP",
@@ -148,6 +166,7 @@ class EditProfile extends StatelessWidget {
                   ],
                 ),
                 child: TextField(
+                  controller: emailcontroller,
                   cursorColor: Color.fromARGB(255, 20, 20, 20),
                   decoration: InputDecoration(
                     hintText: "E-Mail",
@@ -172,6 +191,7 @@ class EditProfile extends StatelessWidget {
                   ],
                 ),
                 child: TextField(
+                  controller: nohpcontroller,
                   cursorColor: Color.fromARGB(255, 20, 20, 20),
                   decoration: InputDecoration(
                     hintText: "No. HP",
@@ -196,6 +216,7 @@ class EditProfile extends StatelessWidget {
                   ],
                 ),
                 child: TextField(
+                  controller: alamatcontroller,
                   cursorColor: Color.fromARGB(255, 20, 20, 20),
                   decoration: InputDecoration(
                     hintText: "Alamat",
@@ -205,7 +226,26 @@ class EditProfile extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {
+                onTap: () async {
+                  print(namacontroller.text);
+                  print(noktpcontroller.text);
+                  print(emailcontroller.text);
+                  print(nohpcontroller.text);
+                  print(alamatcontroller.text);
+                  await users.add({
+                    'nama': namacontroller.text,
+                    'noktp': int.tryParse(noktpcontroller.text) ?? 0,
+                    'email': emailcontroller.text,
+                    'nohp': int.tryParse(nohpcontroller.text) ?? 0,
+                    'alamat': alamatcontroller.text,
+                  });
+
+                  print(namacontroller.text = '');
+                  print(noktpcontroller.text = '');
+                  print(emailcontroller.text = '');
+                  print(nohpcontroller.text = '');
+                  print(alamatcontroller.text = '');
+
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return Profile();
                   }));

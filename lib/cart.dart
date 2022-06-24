@@ -40,7 +40,7 @@ class _cartState extends State<cart> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const dataCustomer(),
+                    builder: (context) => dataCustomer(),
                   ));
             },
             icon: Icon(

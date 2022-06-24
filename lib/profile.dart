@@ -65,7 +65,7 @@ class NewWidget extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const EditProfile()));
+                                    builder: (context) => EditProfile()));
                           },
                           child: const Text(
                             "Edit Profile",
